@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <title>Add products</title>
+  </head>
+  <body id="addProductPage">
+    <!-- Start  Navbar -->
+    <nav id="navbar">
+      <div class="contaier">
+        <div class="logo">
+          <h2>CRUD SYSTEM</h2>
+        </div>
+        <div class="nav-btn" id="nav-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="menu" id="menu">
+          <li class="link"><a href="product.html">products</a></li>
+          <li class="link active">
+            <a href="Addproducts.html">Add products</a>
+          </li>
+          <li class="logout" id="logout">Logout</li>
+        </ul>
+      </div>
+    </nav>
+    <!-- End  Navbar -->
+    <!-- start add product section-->
+    <section id="addProduct">
+      <div class="container">
+        <form>
+          <fieldset>
+            <legend id="legendForm">Add Product</legend>
+            <div class="product-info">
+              <div class="main-info">
+                <div class="form-input">
+                  <label for="Pname">Name</label>
+                  <input type="text" id="Pname" />
+                  <small id="PnameErr"></small>
+                </div>
+                <div class="form-input">
+                  <label for="Pquantity">Quantity</label>
+                  <input type="number" id="Pquantity" />
+                  <small id="PPquantityErr"></small>
+                </div>
+                <div class="form-input">
+                  <label for="Pprice">Price</label>
+                  <input type="number" id="Pprice" />
+                  <small id="PPriceErr"></small>
+                </div>
+              </div>
+              <div class="form-input">
+                <label for="Pdisc">Description</label>
+                <textarea id="Pdisc" cols="30" rows="10"></textarea>
+                <small id="pDiscErr"></small>
+              </div>
+            </div>
+            <div class="form-input">
+              <label for="Pimg" class="img-input" id="img-input">
+                Add Images For Your Proudct
+                <img
+                  src="../img/scan_4946166.png"
+                  alt="icon"
+                  width="30px"
+                  height="30px"
+                />
+              </label>
+              <input type="file" id="Pimg" multiple />
+              <small id="pDiscErr"></small>
+            </div>
+            <div class="form-input">
+              <input
+                type="submit"
+                id="addBtn"
+                value="Add product"
+                class="add"
+              />
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+    <div id="test"></div>
+    <!-- End add product section-->
+    <script src="../js/main.js"></script>
+  </body>
+</html>

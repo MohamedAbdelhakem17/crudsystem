@@ -1,0 +1,556 @@
+/* Start Variable */
+:root {
+    --bg-color: #f6f1f1;
+    --main-color: #146c94;
+    --text-color: #19a7ce;
+    --main-padding: 15px 30px;
+}
+
+/* End Variable */
+/* Start Global Rules */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+*,
+*::after,
+*::before {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Ubuntu", sans-serif;
+    background-color: var(--bg-color);
+    padding-top: 70px;
+}
+
+/* End Global Rules */
+
+/* Start Navbar */
+#navbar {
+    background-color: var(--main-color);
+    padding: var(--main-padding);
+    box-shadow: inset 0 -10px 10px -10px #f1f1f1;
+    position: fixed;
+    inset: 0;
+    bottom: auto;
+    z-index: 200;
+    max-height: 75px;
+}
+
+#navbar .contaier {
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+}
+
+#navbar .contaier .logo {
+    color: var(--bg-color);
+    letter-spacing: 4px;
+    width: 40%;
+}
+
+#navbar .contaier .nav-btn {
+    display: none;
+}
+
+#navbar .contaier .menu {
+    list-style: none;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+#navbar .contaier .menu .logout,
+#navbar .contaier .menu .link a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all ease-out .1s;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+#navbar .contaier .menu .link.active a,
+#navbar .contaier .menu .link a:hover,
+#navbar .contaier .menu .logout:hover {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+#navbar .contaier .menu .logout:hover {
+    box-shadow: inset 0 0 15px rgba(255, 0, 0, 0.662);
+    color: red
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    #navbar {
+        padding: 10px;
+        position: relative;
+    }
+
+    #navbar .contaier {
+        width: 100%;
+    }
+
+    #navbar .contaier .logo {
+        width: 80%;
+        font-size: 15px;
+    }
+
+    #navbar .contaier .menu {
+        position: absolute;
+        top: 40px;
+        background-color: var(--main-color);
+        width: 100%;
+        right: -100%;
+        padding: 28px 0;
+        justify-content: space-around;
+        flex-direction: column;
+        height: 300px;
+        box-shadow: inset -1px 11px 10px -10px #f1f1f1;
+        transition: all ease-in-out .3s;
+    }
+
+    #navbar .menu.active {
+        right: 0;
+    }
+
+    #navbar .contaier .nav-btn {
+        display: block;
+        direction: rtl;
+    }
+
+    #navbar .contaier .nav-btn span {
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        display: block;
+        margin: 5px 0;
+        cursor: pointer;
+    }
+
+    #navbar .contaier .nav-btn span:nth-child(2) {
+        width: 20px;
+        transition: all ease-in-out .3s;
+    }
+
+}
+
+/* End Navbar */
+
+/* Start login */
+#login {
+    height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#login form {
+    width: 50%;
+    padding: var(--main-padding);
+}
+
+#login form fieldset {
+    border: 3px solid var(--text-color);
+    border-radius: 10px;
+    padding: var(--main-padding);
+}
+
+#login form legend {
+    font-size: 2rem;
+    padding: var(--main-padding);
+    font-weight: 700;
+    border: 3px solid var(--text-color);
+    color: var(--text-color);
+    border-radius: 50px;
+}
+
+#login form .form-input {
+    width: 90%;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#login form .form-input input {
+    padding: 10px;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    color: var(--text-color);
+    font-size: 18px;
+    width: 100%;
+}
+
+#login form .form-input .pass {
+    position: relative;
+    width: 100%;
+}
+
+#login form .form-input input:focus {
+    outline: 2px solid var(--main-color);
+}
+
+#login form .form-input input.not-valid {
+    outline: 2px solid red;
+}
+
+#login form .form-input input.valid {
+    outline: 2px solid green;
+}
+
+#login form .form-input small {
+    color: red;
+    font-size: 15px;
+    font-weight: lighter;
+    padding: var(--main-padding);
+}
+
+#login form .form-input label {
+    font-size: 20px;
+    padding: 10px 0px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+#login form .form-input .pass i {
+    color: var(--text-color);
+    font-size: 17px;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    display: block;
+}
+
+#login form .form-input i.hide {
+    display: none;
+}
+
+#login form .form-input .login {
+    border: 3px solid var(--text-color);
+    padding: var(--main-padding);
+    width: 50%;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 13px;
+    }
+
+    #login form {
+        width: 100%;
+    }
+}
+
+
+/* End Log in  */
+/* Start  Add Prouduct  */
+#addProduct form {
+    padding: var(--main-padding);
+}
+
+#addProduct form fieldset {
+    border: 3px solid var(--text-color);
+    border-radius: 10px;
+    padding: var(--main-padding);
+}
+
+#addProduct form legend {
+    font-size: 2rem;
+    padding: var(--main-padding);
+    font-weight: 700;
+    border: 3px solid var(--text-color);
+    color: var(--text-color);
+    border-radius: 50px;
+}
+
+#addProduct form .product-info {
+    display: flex;
+    align-items: flex-start;
+}
+
+#addProduct form .product-info .main-info {
+    flex: 1;
+}
+
+#addProduct form .form-input {
+    padding: 0 20px;
+    flex: 1;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#addProduct form .form-input input,
+#addProduct form .form-input textarea {
+    padding: 10px;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    color: var(--text-color);
+    font-size: 18px;
+    resize: none;
+}
+
+#addProduct form .form-input label {
+    font-size: 18px;
+    padding: 5px 0px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+#addProduct form .form-input input[type="file"] {
+    display: none;
+}
+
+#addProduct form .form-input .img-input {
+    border: 3px solid var(--text-color);
+    cursor: pointer;
+    display: flex;
+    border-radius: 10px;
+    padding: var(--main-padding);
+    align-items: center;
+    justify-content: space-around;
+}
+
+#addProduct form .form-input .add {
+    border: 3px solid var(--text-color);
+    padding: var(--main-padding);
+    width: 50%;
+    cursor: pointer;
+    margin: 0% auto;
+}
+
+@media only screen and (max-width: 768px) {
+    #addProduct form {
+        padding: 0;
+        width: 90%;
+        margin: 10px auto 0;
+    }
+
+    #addProduct form fieldset {
+        padding: 5px 10px;
+    }
+
+    #addProduct form legend {
+        font-size: 1.5rem;
+    }
+
+    #addProduct form .product-info {
+        flex-direction: column;
+    }
+
+    #addProduct form .product-info .main-info {
+        width: 100%;
+    }
+
+    #addProduct form .product-info .main-info {
+        width: 100%;
+    }
+}
+
+/* End  Add Prouduct  */
+
+/*Start Display Prouduct  */
+#product .container {
+    padding: var(--main-padding);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#product .container .box {
+    width: calc(100% / 3);
+    padding: var(--main-padding);
+}
+
+#product .container .box .inner {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    border: 8px solid white;
+}
+
+#product .container .box .inner .info {
+    position: absolute;
+    z-index: 22;
+    background-color: rgb(0 0 0 / 0.3);
+    backdrop-filter: blur(3px);
+    color: var(--text-color);
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    bottom: 0%;
+    opacity: 0;
+    transition: all ease-in-out .3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+#product .container .box .inner:hover .info {
+    opacity: 1;
+}
+
+#product .container .box .inner .info .name {
+    font-size: 2rem;
+    color: white;
+    font-weight: 900;
+    padding: 10px 5px;
+}
+
+#product .container .box .inner .info .price,
+#product .container .box .inner .info .quantity {
+    font-size: .9rem;
+    font-weight: 800;
+    color: white;
+}
+
+
+#product .container .box .inner .prouduct-img {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#product .container .box .inner .prouduct-img img {
+    width: 100%;
+    height: 100%;
+    transition: all linear .3s;
+    transition-delay: .2s;
+
+}
+
+#product .container .box .inner:hover img {
+    transform: rotate(3deg) scale(1.1);
+}
+
+#product .container .no-product {
+    font-size: 5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--text-color);
+}
+
+@media only screen and (max-width: 768px) {
+    #product .container {
+        padding: 0%;
+    }
+
+    #product .container .box {
+        width: 100%;
+    }
+}
+
+/* End  Display Prouduct  */
+
+/* Start  details Prouduct  */
+#details .container .box {
+    width: 100%;
+    margin-top: -3px;
+}
+
+#details .container .box img {
+    width: 100%;
+    height: 300px;
+}
+
+#details .container .box .info {
+    display: flex;
+}
+
+#details .container .box .info .text {
+    width: 75%;
+    padding: var(--main-padding);
+}
+
+#details .container .box .info .text .name {
+    font-size: 2rem;
+    color: var(--text-color);
+    font-weight: 900;
+    padding: 10px 5px;
+}
+
+#details .container .box .info .text .price,
+#details .container .box .info .text .quantity {
+    font-size: .9rem;
+    font-weight: 800;
+    color: var(--text-color);
+    padding: 10px 0;
+}
+
+#details .container .box .info .edit {
+    width: 20%;
+    padding: 10px 0;
+}
+
+#details .container .box .info .edit .editbtn,
+#details .container .box .info .edit .del {
+    width: 100%;
+    padding: var(--main-padding);
+    border-radius: 10px;
+    background-color: white;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all ease-in-out .3s;
+}
+
+#details .container .box .info .edit .editbtn {
+    border: 5px solid var(--main-color);
+    color: var(--text-color);
+}
+
+#details .container .box .info .edit .editbtn:hover {
+    border: 5px solid var(--text-color);
+    color: var(--main-color);
+}
+
+#details .container .box .info .edit .del {
+    border: 5px solid rgb(113, 0, 0);
+    color: red;
+}
+
+#details .container .box .info .edit .del:hover {
+    border: 5px solid red;
+    color: rgb(113, 0, 0);
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        padding-top: 0;
+        overflow-x: hidden;
+    }
+
+    #details .container .box .info {
+        flex-direction: column;
+    }
+
+    #details .container .box .info .edit {
+        width: 50%;
+        margin: auto;
+    }
+}
+
+/* End  details Prouduct  */

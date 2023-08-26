@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>CRUD System</title>
+  </head>
+  <body id="loginPage">
+    <!-- Start  Navbar -->
+    <nav id="navbar">
+      <div class="contaier">
+        <div class="logo">
+          <h2>CRUD SYSTEM</h2>
+        </div>
+      </div>
+    </nav>
+    <!-- End  Navbar -->
+
+    <!-- Start  Login Form -->
+    <div id="login">
+      <form>
+        <fieldset>
+          <legend>LOG IN</legend>
+          <div class="form-input">
+            <label for="email">Email</label>
+            <input type="email" id="email" />
+            <small id="emError"></small>
+          </div>
+          <div class="form-input">
+            <label for="password">Password</label>
+            <div class="pass">
+              <i class="fa-solid fa-eye" id="show"></i>
+              <i class="fa-solid fa-eye-slash hide" id="hide"></i>
+              <input type="password" id="password" />
+            </div>
+            <small id="passError"></small>
+          </div>
+          <div class="form-input">
+            <input type="submit" id="logbtn" value="Login" class="login" />
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <!-- End  Login Form -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
