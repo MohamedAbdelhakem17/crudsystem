@@ -8,7 +8,7 @@ let products = [];
 if (JSON.parse(localStorage.getItem("products")) !== null) {
   products = JSON.parse(localStorage.getItem("products"));
 }
-
+const navBtn = document.getElementById("nav-btn");
 // Login Page
 if (loginPage) {
   // Element
@@ -128,6 +128,7 @@ if (productPage) {
       window.location.href = url;
     };
   });
+  navBtn.onclick =  openCloseNav;
 }
 
 // Add And Edit Product Page
@@ -220,6 +221,7 @@ if (addProductPage) {
   }
   // Connfert  Mode
   prouductId ? dataEdit(prouductId) : (addBtn.onclick = addProduct);
+  navBtn.onclick =  openCloseNav
 }
 
 // Details Page Page
@@ -242,7 +244,7 @@ if (detailsPage) {
     <h3 class="name">${products[id]["name"]}</h3>
     <h3 class="price">price : ${products[id]["price"]} L.E</h3>
     <h3 class="quantity">Quantity : ${products[id]["quantity"]}</h3>
-    <h3 class="quantity">Quantity : ${products[id]["Disc"]}</h3>
+    <h3 class="quantity">Description : ${products[id]["Disc"]}</h3>
     </div>
       <div class="edit">
       <button type="button" class= "editbtn" id="editbtn"> Edit </button>
@@ -270,6 +272,7 @@ if (detailsPage) {
   };
 
   logoutBtn.onclick = logout;
+  navBtn.onclick =  openCloseNav
 }
 
 // go to Login Function
@@ -285,8 +288,8 @@ function logout() {
   window.location.href = "../index.html";
   localStorage.removeItem("admin");
 }
-const navBtn = document.getElementById("nav-btn");
-navBtn.onclick = function () {
+
+function openCloseNav() {
   const menu = document.getElementById("menu");
   const span = document.querySelector(
     "#navbar .contaier .nav-btn span:nth-child(2)"
@@ -295,4 +298,4 @@ navBtn.onclick = function () {
   [menu.className].join(" ").includes("active")
     ? (span.style.width = 30 + "px")
     : (span.style.width = 20 + "px");
-};
+}
