@@ -126,6 +126,7 @@ body {
     #navbar .contaier .nav-btn {
         display: block;
         direction: rtl;
+         cursor: pointer;
     }
 
     #navbar .contaier .nav-btn span {
