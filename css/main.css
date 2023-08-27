@@ -90,6 +90,9 @@ body {
 
 
 @media only screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
 
     #navbar {
         padding: 10px;
@@ -109,24 +112,25 @@ body {
         position: absolute;
         top: 40px;
         background-color: var(--main-color);
-        width: 100%;
-        right: -100%;
+        width: 0%;
+        overflow: hidden;
+        right: -110%;
         padding: 28px 0;
         justify-content: space-around;
         flex-direction: column;
         height: 300px;
         box-shadow: inset -1px 11px 10px -10px #f1f1f1;
-        transition: all ease-in-out .3s;
+        transition: all ease-in-out .7s;
     }
 
     #navbar .menu.active {
         right: 0;
+        width: 100%;
     }
 
     #navbar .contaier .nav-btn {
         display: block;
         direction: rtl;
-         cursor: pointer;
     }
 
     #navbar .contaier .nav-btn span {
@@ -139,8 +143,8 @@ body {
     }
 
     #navbar .contaier .nav-btn span:nth-child(2) {
-        width: 20px;
-        transition: all ease-in-out .3s;
+        width: 15px;
+        transition: all ease-in-out .7s;
     }
 
 }
@@ -541,7 +545,7 @@ body {
 @media only screen and (max-width: 768px) {
     body {
         padding-top: 0;
-        overflow-x: hidden;
+        overflow-x: hidden !important;
     }
 
     #details .container .box .info {
